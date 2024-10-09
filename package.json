@@ -1,0 +1,14 @@
+{
+  "name": "bento-grid-fm",
+  "version": "1.0.0",
+  "description": "Bento style grid challenge by frontend mentor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "sass styles/style.scss build/style.css && sass styles/reset.scss build/reset.css",
+    "css-watch": "sass --watch styles:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

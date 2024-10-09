@@ -1,0 +1,263 @@
+@use "reset.scss";
+
+//Variables
+$purple-100-card-bg: hsl(254, 88%, 90%);
+$purple-500-card-bg: hsl(256, 67%, 59%);
+$yellow-100-card-bg: hsl(31, 66%, 93%);
+$yellow-500-card-bg: hsl(39, 100%, 71%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 7%);
+
+@mixin Flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+body {
+  @include Flex(column, center, center);
+  min-height: 100vh;
+  background-color: $white;
+
+  font-family: "DM Sans", sans-serif, system-ui;
+}
+
+.main {
+  @include Flex(column, center, center);
+  gap: 1.5rem;
+  max-width: 22rem;
+  margin-block: 1rem;
+}
+
+//General card styles
+.card {
+  border-radius: 12px;
+  //padding: 1.5rem;
+  box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.125);
+  width: 100%;
+
+  //headings
+  h2 {
+    font-weight: 600;
+  }
+}
+
+// card 1 style
+.card-1 {
+  @include Flex(column, center, center);
+  gap: 0.5rem;
+  background-color: $purple-500-card-bg;
+  color: $white;
+  padding: 1.5rem;
+
+  .card-1-heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+
+    span {
+      color: $yellow-500-card-bg;
+    }
+  }
+
+  .card-1-img {
+    max-width: 12rem;
+  }
+
+  .card-1-text {
+    opacity: 0.7;
+    font-size: 1.125rem;
+  }
+}
+
+// ============================== //
+
+// Card 2 styles
+.card-2 {
+  padding: 1rem;
+  background-color: white;
+
+  .card-2-img {
+    margin-bottom: 1rem;
+  }
+
+  .card-2-heading {
+    font-size: 1.5rem;
+    text-wrap: wrap;
+  }
+}
+
+// ============================= //
+
+// Card 3 styles
+.card-3 {
+  @include Flex(column, start, center);
+  gap: 1rem;
+  padding: 1rem;
+  padding-bottom: 0;
+  background-color: $yellow-500-card-bg;
+
+  .card-3-heading {
+    font-size: 1.75rem;
+  }
+
+  .card-3-img {
+    object-fit: cover;
+    max-width: 14rem;
+  }
+}
+
+// ============================= //
+
+// Card 4 styles
+.card-4 {
+  @include Flex(column, center, center);
+  gap: 1rem;
+  padding: 1rem;
+  background-color: $purple-100-card-bg;
+  text-align: center;
+
+  .card-4-heading {
+    font-size: 1.5rem;
+  }
+
+  .card-4-text {
+    max-width: 26ch;
+    text-wrap: pretty;
+  }
+}
+
+// ============================= //
+
+// Card 5 styles
+.card-5 {
+  @include Flex(column, center, center);
+  padding: 1.5rem;
+  background-color: $purple-500-card-bg;
+
+  .card-5-img {
+    max-width: 14rem;
+    margin-bottom: 2rem;
+  }
+
+  .card-5-heading {
+    max-width: 10ch;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    text-wrap: wrap;
+  }
+}
+
+// ============================= //
+
+.card-6 {
+  @include Flex(column, start, center);
+  background-color: white;
+  padding: 1rem;
+
+  .card-6-span {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  .card-6-text {
+    margin-bottom: 1rem;
+  }
+
+  .card-6-img {
+    max-width: 10rem;
+  }
+}
+
+// ============================= //
+
+// Card 7 styles
+.card-7 {
+  background-color: $yellow-100-card-bg;
+  padding: 1rem;
+
+  .card-7-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    i {
+      color: $purple-500-card-bg;
+    }
+  }
+
+  .card-7-img {
+    max-width: 12rem;
+  }
+}
+
+// ============================= //
+
+// Card 8 styles
+.card-8 {
+  background-color: $yellow-500-card-bg;
+  padding: 1.5rem;
+
+  .card-8-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .card-8-img {
+    max-width: 14rem;
+  }
+}
+
+//Footer
+.footer {
+  width: 100%;
+  padding: 0.5rem;
+  color: $white;
+  background: linear-gradient($purple-500-card-bg 95%, $yellow-500-card-bg 5%);
+
+  .footer-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    text-wrap: balance;
+    line-height: 2.5em;
+  }
+
+  .footer-links {
+    position: relative;
+    text-decoration: none;
+    font-weight: 600;
+    color: $yellow-500-card-bg;
+    white-space: nowrap;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      background-color: $white;
+      width: 100%;
+      height: 2px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      background-color: $yellow-500-card-bg;
+      width: 0%;
+      height: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      width: 100%;
+    }
+  }
+}
